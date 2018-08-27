@@ -1,0 +1,21 @@
+name: CI-simple
+stages:
+- name: clone
+  steps:
+  - sourceCodeConfig:
+      branch: master
+      branchCondition: only
+      sourceCodeCredentialId: user-qpt9r:c-n8ssr-github-bwalti
+      url: https://github.com/BWalti/hypomos.git
+- name: build
+  steps:
+  - runScriptConfig:
+      image: promact/docker-dotnet-nodejs
+      isShell: true
+      shellScript: dotnet publish
+- name: publish
+  steps:
+  - publishImageConfig:
+      buildContext: ./web/
+      dockerfilePath: ./web/Dockerfile
+      tag: hypomos:${CICD_EXECUTION_SEQUENCE}
