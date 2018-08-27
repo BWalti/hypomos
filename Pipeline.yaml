@@ -19,3 +19,4 @@ stages:
       buildContext: ./web/
       dockerfilePath: ./web/Dockerfile
       tag: hypomos:${CICD_EXECUTION_SEQUENCE}
+triggerWebhookPush: true
