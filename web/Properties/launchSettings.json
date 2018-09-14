@@ -12,7 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "REACT_APP_AAD_APP_CLIENT_ID": "fa6a41cc-4861-4d0e-8c90-08f16e8587c0",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "REACT_APP_AUTHORITY": "https://login.microsoftonline.com/common"
       }
     },
     "hypomos": {
