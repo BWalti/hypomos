@@ -38,7 +38,7 @@ class App extends React.Component {
                         });
                     },
                     error => {
-                        // console.error(error);
+                        console.error(error);
                         this.setState({
                             apiCallFailed: true
                         });
@@ -46,7 +46,7 @@ class App extends React.Component {
                 );
             },
             error => {
-                // console.error(error);
+                console.error(error);
                 this.setState({
                     apiCallFailed: true
                 });
