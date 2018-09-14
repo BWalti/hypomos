@@ -17,6 +17,5 @@ stages:
   steps:
   - publishImageConfig:
       buildContext: ./web/
-      dockerfilePath: ./web/Dockerfile
+      dockerfilePath: ./web/Dockerfile.ci
       tag: hypomos:${CICD_EXECUTION_SEQUENCE}
-triggerWebhookPush: true
