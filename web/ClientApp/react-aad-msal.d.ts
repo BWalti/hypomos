@@ -1,1 +1,1 @@
-declare module 'react-aad-msal';
+declare module "react-aad-msal";
