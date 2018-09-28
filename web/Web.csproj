@@ -13,8 +13,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1985401" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,10 +27,12 @@
   <ItemGroup>
     <None Remove="ClientApp\src\services\auth.service.ts" />
     <None Remove="ClientApp\src\services\graph.service.ts" />
+    <None Remove="ClientApp\src\services\sampleData.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\services\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\sampleData.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\graph.service.ts" />
   </ItemGroup>
 

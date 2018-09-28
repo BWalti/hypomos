@@ -4,13 +4,12 @@ export default class AuthService {
     private app: Msal.UserAgentApplication;
     private applicationConfig: any;
 
-
     constructor() {
-        const PROD_REDIRECT_URI = 'https://localhost:44346/';
+        const prodRedirectUri = 'https://localhost:44346/';
 
         let redirectUri = window.location.origin;
         if (window.location.hostname !== '127.0.0.1') {
-            redirectUri = PROD_REDIRECT_URI;
+            redirectUri = prodRedirectUri;
         }
 
         this.applicationConfig = {
@@ -32,17 +31,10 @@ export default class AuthService {
 
     public login = () => {
         return this.app.loginPopup(this.applicationConfig.graphScopes).then(
-            ((idToken: any) => {
-                debugger;
-                const user = this.app.getUser();
-                if (user) {
-                    return user;
-                } else {
-                    return null;
-                }
-            }) as any,
+            ((idToken: string) => {
+                return this.app.getUser();
+            }),
             () => {
-                debugger;
                 return null;
             }
         );

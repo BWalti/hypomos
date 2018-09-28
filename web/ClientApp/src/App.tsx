@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AuthService from './services/auth.service';
 import GraphService from './services/graph.service';
+import SampleDataService from './services/sampleData.service';
 
 import './App.css';
 
@@ -11,11 +12,13 @@ class App extends React.Component {
 
     private authService: AuthService;
     private graphService: GraphService;
-
+    private sampleDataService: SampleDataService;
+    
     constructor() {
         super({});
         this.authService = new AuthService();
         this.graphService = new GraphService();
+        this.sampleDataService = new SampleDataService();
 
         this.state = {
             apiCallFailed: false,
@@ -45,6 +48,36 @@ class App extends React.Component {
                     }
                 );
             },
+            error => {
+                console.error(error);
+                this.setState({
+                    apiCallFailed: true
+                });
+            }
+        );
+    };
+
+    public callBackendApi = () => {
+        this.setState({
+            apiCallFailed: false
+        });
+        this.authService.getToken().then(
+            ((token: string) => {
+                debugger;
+                this.sampleDataService.getWeatherForecasts(token, 1).then(
+                    data => {
+                        this.setState({
+                            userInfo: data
+                        });
+                    },
+                    error => {
+                        console.error(error);
+                        this.setState({
+                            apiCallFailed: true
+                        });
+                    }
+                );
+            }),
             error => {
                 console.error(error);
                 this.setState({
@@ -90,6 +123,9 @@ class App extends React.Component {
                 <div key="loggedIn">
                     <button onClick={this.callAPI} type="button">
                         Call Graph's /me API
+                    </button>
+                    <button onClick={this.callBackendApi} type="button">
+                        Call Sample API
                     </button>
                     <button onClick={this.logout} type="button">
                         Logout
