@@ -1,14 +1,14 @@
-import * as React from 'react';
-import AuthService from './services/auth.service';
-import GraphService from './services/graph.service';
+import * as React from "react";
+import AuthService from "./services/auth.service";
+import GraphService from "./services/graph.service";
 import SampleDataService from './services/sampleData.service';
 
-import './App.css';
+import "./App.css";
 
-import logo from './logo.svg';
+import logo from "./logo.svg";
 
 class App extends React.Component {
-    public state: any;
+    state: any;
 
     private authService: AuthService;
     private graphService: GraphService;

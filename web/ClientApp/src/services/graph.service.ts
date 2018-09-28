@@ -2,10 +2,10 @@
     private graphUrl: string;
 
     constructor() {
-        this.graphUrl = 'https://graph.microsoft.com/v1.0/';
+        this.graphUrl = "https://graph.microsoft.com/v1.0/";
     }
 
-    public getUserInfo = (token: any) => {
+    getUserInfo = (token: any) => {
         const headers = new Headers({ Authorization: `Bearer ${token}` });
         const options = {
             headers

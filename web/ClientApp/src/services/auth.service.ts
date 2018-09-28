@@ -1,4 +1,4 @@
-﻿import * as Msal from 'msal';
+﻿import * as Msal from "msal";
 
 export default class AuthService {
     private app: Msal.UserAgentApplication;
@@ -6,20 +6,19 @@ export default class AuthService {
 
     constructor() {
         const prodRedirectUri = 'https://localhost:44346/';
-
         let redirectUri = window.location.origin;
-        if (window.location.hostname !== '127.0.0.1') {
+        if (window.location.hostname !== "127.0.0.1") {
             redirectUri = prodRedirectUri;
         }
 
         this.applicationConfig = {
-            clientID: 'fa6a41cc-4861-4d0e-8c90-08f16e8587c0',
-            graphScopes: ['user.read']
+            clientID: "fa6a41cc-4861-4d0e-8c90-08f16e8587c0",
+            graphScopes: ["user.read"]
         };
 
         this.app = new Msal.UserAgentApplication(
             this.applicationConfig.clientID,
-            '',
+            "",
             () => {
                 // callback for login redirect
             },
@@ -29,7 +28,7 @@ export default class AuthService {
         );
     }
 
-    public login = () => {
+    login = () => {
         return this.app.loginPopup(this.applicationConfig.graphScopes).then(
             ((idToken: string) => {
                 return this.app.getUser();
@@ -40,11 +39,11 @@ export default class AuthService {
         );
     };
 
-    public logout = () => {
+    logout = () => {
         this.app.logout();
     };
 
-    public getToken = () => {
+    getToken = () => {
         return this.app.acquireTokenSilent(this.applicationConfig.graphScopes).then(
             accessToken => {
                 return accessToken;
