@@ -1,0 +1,4 @@
+﻿Microsoft.AspNetCore.App
+Microsoft.AspNetCore.Razor.Design
+Microsoft.VisualStudio.Azure.Containers.Tools.Targets
+IdentityServer4.AccessTokenValidation

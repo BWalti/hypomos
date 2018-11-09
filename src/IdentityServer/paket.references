@@ -1,0 +1,4 @@
+﻿Microsoft.AspNetCore.App
+Microsoft.VisualStudio.Azure.Containers.Tools.Targets
+IdentityServer4
+IdentityServer4.EntityFramework
