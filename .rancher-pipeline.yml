@@ -1,0 +1,15 @@
+stages:
+- name: Build
+  steps:
+  - runScriptConfig:
+      image: promact/docker-dotnet-nodejs
+      shellScript: dotnet publish
+- name: Publish
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./web/Dockerfile.ci
+      buildContext: ./web/
+      tag: hypomos:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
