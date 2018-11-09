@@ -1,27 +1,35 @@
 import * as React from "react";
-//import AuthService from "./services/auth.service";
-//import GraphService from "./services/graph.service";
-//import SampleDataService from './services/sampleData.service';
+// import AuthService from "./services/auth.service";
+// import GraphService from "./services/graph.service";
+// import SampleDataService from './services/sampleData.service';
 
 import Authenticate from 'react-openidconnect';
-import OidcSettings from './OidcSettings';
 
 import "./App.css";
 
 import logo from "./logo.svg";
 
+const OidcSettings = {
+    authority: 'https://localhost:5000',
+    client_id: 'js',
+    post_logout_redirect_uri: 'id_token token', 
+    redirect_uri: 'https://localhost:5003/callback.html', 
+    response_type: 'openid profile api1', 
+    scope: 'https://localhost:5003/index.html'
+};
+
 class App extends React.Component {
     public state: any;
 
-    //private authService: AuthService;
-    //private graphService: GraphService;
-    //private sampleDataService: SampleDataService;
+    // private authService: AuthService;
+    // private graphService: GraphService;
+    // private sampleDataService: SampleDataService;
     
     constructor() {
         super({});
-        //this.authService = new AuthService();
-        //this.graphService = new GraphService();
-        //this.sampleDataService = new SampleDataService();
+        // this.authService = new AuthService();
+        // this.graphService = new GraphService();
+        // this.sampleDataService = new SampleDataService();
 
         this.state = {
             apiCallFailed: false,
@@ -32,8 +40,13 @@ class App extends React.Component {
     }
 
     public userLoaded(user: any) {
-        if (user)
-            this.setState({ "user": user });
+        if (user) {
+            this.setState(
+                {
+                    "user": user
+                }
+            );
+        }
     } 
   
     public userUnLoaded() {
@@ -44,7 +57,7 @@ class App extends React.Component {
         return <div>You are not authenticated, please click here to authenticate.</div>;
     }
 
-    //public callApi = () => {
+    // public callApi = () => {
     //    this.setState({
     //        apiCallFailed: false
     //    });
@@ -71,9 +84,9 @@ class App extends React.Component {
     //            });
     //        }
     //    );
-    //};
+    // };
 
-    //public callBackendApi = () => {
+    // public callBackendApi = () => {
     //    this.setState({
     //        apiCallFailed: false
     //    });
@@ -101,13 +114,13 @@ class App extends React.Component {
     //            });
     //        }
     //    );
-    //};
+    // };
 
-    //public logout = () => {
+    // public logout = () => {
     //    this.authService.logout();
-    //};
+    // };
 
-    //public login = () => {
+    // public login = () => {
     //    this.setState({
     //        loginFailed: false
     //    });
@@ -129,12 +142,12 @@ class App extends React.Component {
     //            });
     //        }
     //    );
-    //};
+    // };
 
     public render() {
-        //const templates: JSX.Element[] = [];
+        // const templates: JSX.Element[] = [];
 
-        //if (this.state.user) {
+        // if (this.state.user) {
         //    templates.push(
         //        <div key="loggedIn">
         //            <button onClick={this.callApi} type="button">
@@ -149,7 +162,7 @@ class App extends React.Component {
         //            <h3>Hello {this.state.user.name}</h3>
         //        </div>
         //    );
-        //} else {
+        // } else {
         //    templates.push(
         //        <div key="loggedIn">
         //            <button onClick={this.login} type="button">
@@ -157,22 +170,22 @@ class App extends React.Component {
         //            </button>
         //        </div>
         //    );
-        //}
-        //if (this.state.userInfo) {
+        // }
+        // if (this.state.userInfo) {
         //    templates.push(
         //        <pre key="userInfo">{JSON.stringify(this.state.userInfo, null, 4)}</pre>
         //    );
-        //}
-        //if (this.state.loginFailed) {
-        //    templates.push(<strong key="loginFailed">Login unsuccessful</strong>);
-        //}
-        //if (this.state.apiCallFailed) {
-        //    templates.push(
-        //        <strong key="apiCallFailed">Graph API call unsuccessful</strong>
-        //    );
-        //}
+        // }
+        // if (this.state.loginFailed) {
+        //     templates.push(<strong key="loginFailed">Login unsuccessful</strong>);
+        // }
+        // if (this.state.apiCallFailed) {
+        //     templates.push(
+        //         <strong key="apiCallFailed">Graph API call unsuccessful</strong>
+        //     );
+        // }
         
-        //{templates}
+        // {templates}
 
         return (
             <div className="App">
@@ -180,7 +193,9 @@ class App extends React.Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">React app with MSAL.js</h1>
                 </header>
-                <Authenticate OidcSettings={OidcSettings} 
+
+                <Authenticate 
+                    OidcSettings={OidcSettings} 
                     userLoaded={this.userLoaded} 
                     userunLoaded={this.userUnLoaded} 
                     renderNotAuthenticated={this.NotAuthenticated}>
