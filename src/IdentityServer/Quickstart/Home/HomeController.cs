@@ -19,13 +19,8 @@ namespace Hypomos.IdentityServer.Quickstart.Home
             this._interaction = interaction;
         }
 
-        public IActionResult Index()
-        {
-            return this.View();
-        }
-
         /// <summary>
-        /// Shows the error page
+        ///     Shows the error page
         /// </summary>
         public async Task<IActionResult> Error(string errorId)
         {
@@ -33,12 +28,14 @@ namespace Hypomos.IdentityServer.Quickstart.Home
 
             // retrieve error details from identityserver
             var message = await this._interaction.GetErrorContextAsync(errorId);
-            if (message != null)
-            {
-                vm.Error = message;
-            }
+            if (message != null) vm.Error = message;
 
             return this.View("Error", vm);
+        }
+
+        public IActionResult Index()
+        {
+            return this.View();
         }
     }
 }

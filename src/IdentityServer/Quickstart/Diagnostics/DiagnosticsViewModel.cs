@@ -29,6 +29,7 @@ namespace Hypomos.IdentityServer.Quickstart.Diagnostics
         }
 
         public AuthenticateResult AuthenticateResult { get; }
+
         public IEnumerable<string> Clients { get; } = new List<string>();
     }
 }

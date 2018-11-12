@@ -16,11 +16,9 @@ namespace Hypomos.IdentityServer.Quickstart.Diagnostics
     {
         public async Task<IActionResult> Index()
         {
-            var localAddresses = new string[] { "127.0.0.1", "::1", this.HttpContext.Connection.LocalIpAddress.ToString() };
+            var localAddresses = new[] { "127.0.0.1", "::1", this.HttpContext.Connection.LocalIpAddress.ToString() };
             if (!localAddresses.Contains(this.HttpContext.Connection.RemoteIpAddress.ToString()))
-            {
                 return this.NotFound();
-            }
 
             var model = new DiagnosticsViewModel(await this.HttpContext.AuthenticateAsync());
             return this.View(model);
