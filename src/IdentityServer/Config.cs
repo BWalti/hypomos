@@ -1,14 +1,15 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-using IdentityServer4;
-using IdentityServer4.Models;
-using IdentityServer4.Test;
-using System.Collections.Generic;
-using System.Security.Claims;
-
-namespace QuickstartIdentityServer
+namespace Hypomos.IdentityServer
 {
+    using System.Collections.Generic;
+    using System.Security.Claims;
+
+    using IdentityServer4;
+    using IdentityServer4.Models;
+    using IdentityServer4.Test;
+
     public class Config
     {
         // scopes define the resources in your system

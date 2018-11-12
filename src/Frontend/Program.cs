@@ -1,4 +1,4 @@
-﻿namespace Frontend
+﻿namespace Hypomos.Frontend
 {
     using System;
 

@@ -1,4 +1,4 @@
-﻿namespace Api.Controllers
+﻿namespace Hypomos.Api.Controllers
 {
     using System.Collections.Generic;
 

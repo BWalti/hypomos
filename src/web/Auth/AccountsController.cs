@@ -1,4 +1,4 @@
-﻿namespace Hypomos.Web.Areas.Identity
+﻿namespace Hypomos.Web.Auth
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -6,10 +6,9 @@
     using AutoMapper;
 
     using FluentValidation;
-    //using FluentValidation.Attributes;
 
+    using Hypomos.Web.Areas.Identity;
     using Hypomos.Web.Areas.Identity.Entities;
-    using Hypomos.Web.Auth;
     using Hypomos.Web.Data;
     using Hypomos.Web.Helpers;
 
@@ -18,14 +17,15 @@
     using Microsoft.Extensions.Options;
 
     using Newtonsoft.Json;
+    //using FluentValidation.Attributes;
 
     public class CredentialsViewModelValidator : AbstractValidator<CredentialsViewModel>
     {
         public CredentialsViewModelValidator()
         {
-            RuleFor(vm => vm.UserName).NotEmpty().WithMessage("Username cannot be empty");
-            RuleFor(vm => vm.Password).NotEmpty().WithMessage("Password cannot be empty");
-            RuleFor(vm => vm.Password).Length(6, 12).WithMessage("Password must be between 6 and 12 characters");
+            this.RuleFor(vm => vm.UserName).NotEmpty().WithMessage("Username cannot be empty");
+            this.RuleFor(vm => vm.Password).NotEmpty().WithMessage("Password cannot be empty");
+            this.RuleFor(vm => vm.Password).Length(6, 12).WithMessage("Password must be between 6 and 12 characters");
         }
     }
 
@@ -45,27 +45,27 @@
 
         public AuthController(UserManager<AppUser> userManager, IJwtFactory jwtFactory, IOptions<JwtIssuerOptions> jwtOptions)
         {
-            _userManager = userManager;
-            _jwtFactory = jwtFactory;
-            _jwtOptions = jwtOptions.Value;
+            this._userManager = userManager;
+            this._jwtFactory = jwtFactory;
+            this._jwtOptions = jwtOptions.Value;
         }
 
         // POST api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return this.BadRequest(this.ModelState);
             }
 
-            var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
+            var identity = await this.GetClaimsIdentity(credentials.UserName, credentials.Password);
             if (identity == null)
             {
-                return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
+                return this.BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", this.ModelState));
             }
 
-            var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, credentials.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
+            var jwt = await Tokens.GenerateJwt(identity, this._jwtFactory, credentials.UserName, this._jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
             return new OkObjectResult(jwt);
         }
 
@@ -75,14 +75,14 @@
                 return await Task.FromResult<ClaimsIdentity>(null);
 
             // get the user to verifty
-            var userToVerify = await _userManager.FindByNameAsync(userName);
+            var userToVerify = await this._userManager.FindByNameAsync(userName);
 
             if (userToVerify == null) return await Task.FromResult<ClaimsIdentity>(null);
 
             // check the credentials
-            if (await _userManager.CheckPasswordAsync(userToVerify, password))
+            if (await this._userManager.CheckPasswordAsync(userToVerify, password))
             {
-                return await Task.FromResult(_jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id));
+                return await Task.FromResult(this._jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id));
             }
 
             // Credentials are invalid, or account doesn't exist

@@ -2,6 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Hypomos.IdentityServer</AssemblyName>
+    <RootNamespace>Hypomos.IdentityServer</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />

@@ -1,4 +1,4 @@
-﻿namespace Api
+﻿namespace Hypomos.Api
 {
     using System;
 
