@@ -10,12 +10,19 @@ import "./App.css";
 import logo from "./logo.svg";
 
 const OidcSettings = {
-    authority: 'https://localhost:5000',
+    authority: 'http://localhost:5000',
     client_id: 'js',
-    post_logout_redirect_uri: 'id_token token', 
-    redirect_uri: 'https://localhost:5003/callback.html', 
-    response_type: 'openid profile api1', 
-    scope: 'https://localhost:5003/index.html'
+    post_logout_redirect_uri: 'http://localhost:5003/index.html', 
+    redirect_uri: 'http://localhost:5003/index.html', 
+    response_type: 'id_token token', 
+    scope: 'openid profile'
+};
+
+const Authenticated = (user: any) => { 
+    if (user !== undefined && user.user !== undefined) {
+        return (<div>Hello dear {user.user} you are authenticated.</div>);
+    }
+    return null;
 };
 
 class App extends React.Component {
@@ -37,15 +44,19 @@ class App extends React.Component {
             user: null,
             userInfo: null
         };
+
+        this.userLoaded = this.userLoaded.bind(this); 
+        this.userUnLoaded = this.userUnLoaded.bind(this);
     }
 
     public userLoaded(user: any) {
         if (user) {
-            this.setState(
-                {
-                    "user": user
-                }
-            );
+            debugger;
+            // this.setState(
+            //    {
+            //        "user": user
+            //    }
+            // );
         }
     } 
   
@@ -200,7 +211,7 @@ class App extends React.Component {
                     userunLoaded={this.userUnLoaded} 
                     renderNotAuthenticated={this.NotAuthenticated}>
 
-                    <div>If you see this you are authenticated.</div>
+                    <Authenticated user={this.state.user} />
                 </Authenticate>
             </div>
         );

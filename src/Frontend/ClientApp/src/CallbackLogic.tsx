@@ -3,12 +3,12 @@ import * as React from "react";
 import { UserManager } from 'oidc-client';
 
 const OidcSettings = {
-    authority: 'https://localhost:5000',
+    authority: 'http://localhost:5000',
     client_id: 'js',
-    post_logout_redirect_uri: 'id_token token', 
-    redirect_uri: 'https://localhost:5003/callback.html', 
-    response_type: 'openid profile api1', 
-    scope: 'https://localhost:5003/index.html'
+    post_logout_redirect_uri: 'http://localhost:5003/index.html', 
+    redirect_uri: 'http://localhost:5003/index.html', 
+    response_type: 'id_token token', 
+    scope: 'openid profile'
 };
 
 class CallbackLogic extends React.Component {
