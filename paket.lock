@@ -1113,7 +1113,7 @@ NUGET
       Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netstandard2.0
       System.Text.Encodings.Web (>= 4.5) - restriction: >= netstandard2.0
-    Microsoft.IdentityModel.Clients.ActiveDirectory (4.3) - restriction: >= netcoreapp2.1
+    Microsoft.IdentityModel.Clients.ActiveDirectory (4.4) - restriction: >= netcoreapp2.1
       NETStandard.Library (>= 1.6.1) - restriction: || (&& (< monoandroid8.1) (< net45) (>= netstandard1.3) (< uap10.0) (< xamarinios)) (&& (< net45) (>= netstandard1.1) (< netstandard1.3))
       System.Runtime.Serialization.Json (>= 4.3) - restriction: || (&& (< monoandroid8.1) (< net45) (>= netstandard1.3) (< xamarinios)) (&& (< net45) (>= netstandard1.1) (< netstandard1.3)) (>= uap10.0)
       System.Runtime.Serialization.Primitives (>= 4.3) - restriction: || (&& (< monoandroid8.1) (< net45) (>= netstandard1.3) (< xamarinios)) (&& (< net45) (>= netstandard1.1) (< netstandard1.3)) (>= uap10.0)
@@ -1170,7 +1170,7 @@ NUGET
       System.Buffers (>= 4.5) - restriction: >= netstandard2.0
     Microsoft.NETCore.Platforms (2.1.1) - restriction: || (&& (>= dnxcore50) (>= netstandard2.0)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard2.0) (< win8) (< wpa81)) (&& (< net45) (>= netstandard2.0) (< xamarinios)) (>= netcoreapp2.0)
     Microsoft.NETCore.Targets (2.1) - restriction: || (&& (>= dnxcore50) (>= netstandard2.0)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard2.0) (< win8) (< wpa81)) (&& (< monoandroid) (< net45) (>= netstandard2.0) (< win8) (< wpa81) (< xamarinios)) (>= netcoreapp2.1)
-    Microsoft.Rest.ClientRuntime (2.3.17) - restriction: >= netcoreapp2.1
+    Microsoft.Rest.ClientRuntime (2.3.18) - restriction: >= netcoreapp2.1
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.4)
       Newtonsoft.Json (>= 10.0.3) - restriction: && (< net452) (>= netstandard1.4)
     Microsoft.Rest.ClientRuntime.Azure (3.3.18) - restriction: >= netcoreapp2.1
