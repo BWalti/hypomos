@@ -15,8 +15,8 @@ const OidcSettings = {
 };
 
 const Authenticated = (user: any) => { 
-    if (user !== undefined && user.user !== undefined) {
-        return (<div>Hello dear {user.user} you are authenticated.</div>);
+    if (user && user.profile && user.profile.name) {
+        return (<div>Hello dear {user.profile.name} you are authenticated.</div>);
     }
 
     return null;
@@ -25,8 +25,8 @@ const Authenticated = (user: any) => {
 class App extends React.Component {
     public state: any;
 
-    constructor() {
-        super({});
+    constructor(props: any) {
+        super(props);
 
         this.state = {
             apiCallFailed: false,
@@ -41,7 +41,7 @@ class App extends React.Component {
 
     public userLoaded(user: any) {
         if (user) {
-            debugger;
+            this.setState({ user });
         }
     } 
   
