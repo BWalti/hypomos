@@ -80,7 +80,7 @@ namespace Hypomos.IdentityServer
                                    AllowedGrantTypes = GrantTypes.Implicit,
                                    AllowAccessTokensViaBrowser = true,
                                    RedirectUris = {
-                                                     "http://localhost:5003/callback.html" 
+                                                     "http://localhost:5003/index.html" 
                                                   },
                                    PostLogoutRedirectUris = {
                                                                "http://localhost:5003/index.html" 
