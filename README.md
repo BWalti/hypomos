@@ -15,3 +15,6 @@ Further readings:
 - https://www.onelogin.com/blog/how-to-use-openid-connect-authentication-with-dotnet-core
 - https://stackoverflow.com/questions/48159255/asp-net-core-2-0-using-openid-connect-authentication-running-under-an-iis-site
 - https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins?view=aspnetcore-2.1&tabs=aspnetcore2x
+
+Layout:
+- https://medium.com/@gmonne/simple-app-layout-with-office-ui-fabric-react-2eac6361e1b4
