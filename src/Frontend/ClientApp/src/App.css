@@ -1,4 +1,6 @@
-.App { text-align: center; }
+.App {
+    text-align: center;
+}
 
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -12,14 +14,21 @@
     padding: 20px;
 }
 
-.App-title { font-size: 1.5em; }
+.App-title {
+    font-size: 1.5em;
+}
 
-.App-intro { font-size: large; }
+.App-intro {
+    font-size: large;
+}
 
 @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .App {
@@ -55,13 +64,6 @@
     content: '\00a0';
 }
 
-* 
-Set the main wrapper component to 
-take up the entire height of the page
- */
-.App {
-    height: 100vh; 
-}
 /*
 To use Flexbox we need to set the display
 setting of the container component to flex.
@@ -70,19 +72,26 @@ components. By default flexbox will order
 them by row, but we can also tell it to do
 it by column.
 */
+
 .App {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
 }
+
 /*
 Something similar is done to the body 
 element, except we order the wrapped 
 component as rows.
 */
+
 .App .body {
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
+
 /*
 Flexbox let's us reorder the way the 
 elements are placed inside the wrapper
@@ -92,18 +101,63 @@ component. We also set its width to 12em
 and set its flex propertires so it doesn't
 grow or shrink with the rest of the page.
 */
+
 .body .sidebar {
     order: -1;
     max-width: 12em;
-    flex-grow: 0;    /* Defined the ability to grow */
-    flex-shrink: 0;  /* Defines the ability to shrink */
-    flex-basis: 12em;/* Default value of the element before distribuing the remaing space */
+    flex-grow: 1;
+    /* Defined the ability to grow */
+    flex-shrink: 0;
+    /* Defines the ability to shrink */
+    flex-basis: 12em;
+    /* Default value of the element before distribuing the remaing space */
 }
+
+.body .sidebar {
+    flex: 0 0 12em;
+}
+
 /*
 Lastly we give some custom height to our 
 header and footer components.
 */
+
 .App .header,
 .App .footer {
     height: 4em;
+}
+
+.body .container {
+    padding: 1em;
+    flex: 1;
+}
+
+/*.body .content {
+    flex: 1;
+  }*/
+
+.body .ms-Breadcrumb {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.body .selection {
+    height: calc(100vh - 16.5em);
+    overflow-x: auto;
+}
+
+.body .selection .selection-item {
+    display: flex;
+    padding: 0.5em;
+}
+
+.body .selection .selection-item .name {
+    margin-left: 1em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
 }

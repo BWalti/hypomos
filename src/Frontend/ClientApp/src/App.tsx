@@ -1,4 +1,9 @@
 import * as React from 'react';
+import {Fabric} from 'office-ui-fabric-react/lib/Fabric'
+import NavBar from './components/NavBar.js'
+import SidebarMenu from './components/SidebarMenu.js'
+import Content from './components/Content.js'
+import Footer from './components/Footer.js'
 
 import './App.css';
 // import OidcSettings from './config/oidc-settings';
@@ -30,8 +35,8 @@ class App extends React.Component {
             userInfo: null
         };
 
-        this.userLoaded = this.userLoaded.bind(this); 
-        this.userUnLoaded = this.userUnLoaded.bind(this);
+        // this.userLoaded = this.userLoaded.bind(this); 
+        // this.userUnLoaded = this.userUnLoaded.bind(this);
     }
 
     public userLoaded(user: any) {
@@ -41,19 +46,27 @@ class App extends React.Component {
     } 
   
     public userUnLoaded() {
-        this.setState({ "user": undefined });
+        this.setState({ user: undefined });
     } 
  
     public render() {
         return (
-            <div className="App">
-                <div className="header" />        
-                <div className="body">
-                    <div className="content" />
-                    <div className="sidebar" />      
-                </div>
-                <div className="footer" />
-            </div>
+            <Fabric className="App">
+        <div className="header">
+          <NavBar />
+        </div>        
+        <div className="body">
+          <div className="content">
+            <Content />
+          </div>
+          <div className="sidebar">
+            <SidebarMenu />
+          </div>      
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+      </Fabric>
         );
     }
 

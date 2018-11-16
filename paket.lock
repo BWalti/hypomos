@@ -6,8 +6,8 @@ NUGET
     IdentityModel (3.10.1) - restriction: || (>= net461) (>= netstandard2.0)
       Newtonsoft.Json (>= 11.0.1) - restriction: || (>= net452) (>= netstandard1.4)
       System.Text.Encodings.Web (>= 4.5) - restriction: || (>= net452) (>= netstandard1.4)
-    IdentityModel.AspNetCore.OAuth2Introspection (3.4.1) - restriction: || (>= net461) (>= netstandard2.0)
-      IdentityModel (>= 3.8) - restriction: || (>= net461) (>= netstandard2.0)
+    IdentityModel.AspNetCore.OAuth2Introspection (3.5) - restriction: || (>= net461) (>= netstandard2.0)
+      IdentityModel (>= 3.10) - restriction: || (>= net461) (>= netstandard2.0)
       Microsoft.AspNetCore.Authentication (>= 2.0) - restriction: || (>= net461) (>= netstandard2.0)
       Microsoft.AspNetCore.Http.Abstractions (>= 2.0) - restriction: || (>= net461) (>= netstandard2.0)
       Microsoft.Extensions.Caching.Memory (>= 2.0) - restriction: || (>= net461) (>= netstandard2.0)
@@ -91,7 +91,7 @@ NUGET
     Microsoft.AspNet.WebApi.Client (5.2.6) - restriction: >= netcoreapp2.1
       Newtonsoft.Json (>= 10.0.1) - restriction: && (< net45) (>= netstandard2.0)
       Newtonsoft.Json.Bson (>= 1.0.1) - restriction: && (< net45) (>= netstandard2.0)
-    Microsoft.AspNetCore (2.1.4) - restriction: >= netcoreapp2.1
+    Microsoft.AspNetCore (2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Diagnostics (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.HostFiltering (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.Hosting (>= 2.1.1) - restriction: >= netstandard2.0
@@ -108,9 +108,9 @@ NUGET
       Microsoft.Extensions.Logging.Configuration (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Logging.Console (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Logging.Debug (>= 2.1.1) - restriction: >= netstandard2.0
-    Microsoft.AspNetCore.All (2.1.5)
+    Microsoft.AspNetCore.All (2.1.6)
       Microsoft.AspNet.WebApi.Client (>= 5.2.6) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore (>= 2.1.4) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore (>= 2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Antiforgery (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.ApplicationInsights.HostingStartup (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Authentication (>= 2.1.2) - restriction: >= netcoreapp2.1
@@ -155,9 +155,9 @@ NUGET
       Microsoft.AspNetCore.Http.Features (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.HttpOverrides (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.HttpsPolicy (>= 2.1.1) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity (>= 2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity.EntityFrameworkCore (>= 2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity.UI (>= 2.1.3) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity (>= 2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity.EntityFrameworkCore (>= 2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity.UI (>= 2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.JsonPatch (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Localization (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Localization.Routing (>= 2.1.1) - restriction: >= netcoreapp2.1
@@ -249,8 +249,8 @@ NUGET
       Microsoft.Extensions.Hosting (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Hosting.Abstractions (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Http (>= 2.1.1) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Identity.Core (>= 2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Identity.Stores (>= 2.1.3) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Identity.Core (>= 2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Identity.Stores (>= 2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Localization (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Localization.Abstractions (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging (>= 2.1.1) - restriction: >= netcoreapp2.1
@@ -261,10 +261,10 @@ NUGET
       Microsoft.Extensions.Logging.Debug (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging.EventSource (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging.TraceSource (>= 2.1.1) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.ObjectPool (>= 2.1.1) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.ObjectPool (>= 2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Options.ConfigurationExtensions (>= 2.1.1) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Primitives (>= 2.1.1) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Primitives (>= 2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.WebEncoders (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Net.Http.Headers (>= 2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.VisualStudio.Web.BrowserLink (>= 2.1.1) - restriction: >= netcoreapp2.1
@@ -275,9 +275,9 @@ NUGET
       Microsoft.AspNetCore.Http.Extensions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.WebUtilities (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.ObjectPool (>= 2.1.1) - restriction: >= netstandard2.0
-    Microsoft.AspNetCore.App (2.1.5)
+    Microsoft.AspNetCore.App (2.1.6)
       Microsoft.AspNet.WebApi.Client (>= 5.2.6 < 5.3) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore (>= 2.1.4 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Antiforgery (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Authentication (>= 2.1.2 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Authentication.Abstractions (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
@@ -317,9 +317,9 @@ NUGET
       Microsoft.AspNetCore.Http.Features (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.HttpOverrides (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.HttpsPolicy (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity (>= 2.1.3 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity.EntityFrameworkCore (>= 2.1.3 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity.UI (>= 2.1.3 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity.EntityFrameworkCore (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity.UI (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.JsonPatch (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Localization (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Localization.Routing (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
@@ -403,8 +403,8 @@ NUGET
       Microsoft.Extensions.Hosting (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Hosting.Abstractions (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Http (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Identity.Core (>= 2.1.3 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Identity.Stores (>= 2.1.3 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Identity.Core (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Identity.Stores (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Localization (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Localization.Abstractions (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
@@ -414,10 +414,10 @@ NUGET
       Microsoft.Extensions.Logging.Debug (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging.EventSource (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging.TraceSource (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.ObjectPool (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.ObjectPool (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Options (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Options.ConfigurationExtensions (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Primitives (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Primitives (>= 2.1.6 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.WebEncoders (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       Microsoft.Net.Http.Headers (>= 2.1.1 < 2.2) - restriction: >= netcoreapp2.1
       System.IO.Pipelines (>= 4.5.2) - restriction: >= netcoreapp2.1
@@ -597,21 +597,21 @@ NUGET
       Microsoft.AspNetCore.Http.Extensions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Configuration.Binder (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netstandard2.0
-    Microsoft.AspNetCore.Identity (2.1.3) - restriction: >= netcoreapp2.1
+    Microsoft.AspNetCore.Identity (2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Authentication.Cookies (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.Cryptography.KeyDerivation (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.Hosting.Abstractions (>= 2.1.1) - restriction: >= netstandard2.0
-      Microsoft.Extensions.Identity.Core (>= 2.1.3) - restriction: >= netstandard2.0
-    Microsoft.AspNetCore.Identity.EntityFrameworkCore (2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity (>= 2.1.3) - restriction: >= netstandard2.0
+      Microsoft.Extensions.Identity.Core (>= 2.1.6) - restriction: >= netstandard2.0
+    Microsoft.AspNetCore.Identity.EntityFrameworkCore (2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity (>= 2.1.6) - restriction: >= netstandard2.0
       Microsoft.EntityFrameworkCore.Relational (>= 2.1.1) - restriction: >= netstandard2.0
-      Microsoft.Extensions.Identity.Stores (>= 2.1.3) - restriction: >= netstandard2.0
-    Microsoft.AspNetCore.Identity.UI (2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.AspNetCore.Identity (>= 2.1.3) - restriction: >= netstandard2.0
+      Microsoft.Extensions.Identity.Stores (>= 2.1.6) - restriction: >= netstandard2.0
+    Microsoft.AspNetCore.Identity.UI (2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.AspNetCore.Identity (>= 2.1.6) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.Mvc (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.AspNetCore.StaticFiles (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.FileProviders.Embedded (>= 2.1.1) - restriction: >= netstandard2.0
-      Microsoft.Extensions.Identity.Stores (>= 2.1.3) - restriction: >= netstandard2.0
+      Microsoft.Extensions.Identity.Stores (>= 2.1.6) - restriction: >= netstandard2.0
     Microsoft.AspNetCore.JsonPatch (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.CSharp (>= 4.5) - restriction: >= netstandard2.0
       Newtonsoft.Json (>= 11.0.2) - restriction: >= netstandard2.0
@@ -854,14 +854,14 @@ NUGET
     Microsoft.AspNetCore.WebUtilities (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Net.Http.Headers (>= 2.1.1) - restriction: >= netstandard2.0
       System.Text.Encodings.Web (>= 4.5) - restriction: >= netstandard2.0
-    Microsoft.Azure.KeyVault (3.0.1) - restriction: >= netcoreapp2.1
-      Microsoft.Azure.KeyVault.WebKey (>= 3.0.1) - restriction: || (>= net452) (>= netstandard1.4)
-      Microsoft.Rest.ClientRuntime (>= 2.3.17 < 3.0) - restriction: || (>= net452) (>= netstandard1.4)
+    Microsoft.Azure.KeyVault (3.0.2) - restriction: >= netcoreapp2.1
+      Microsoft.Azure.KeyVault.WebKey (>= 3.0.2) - restriction: || (>= net452) (>= netstandard1.4)
+      Microsoft.Rest.ClientRuntime (>= 2.3.18 < 3.0) - restriction: || (>= net452) (>= netstandard1.4)
       Microsoft.Rest.ClientRuntime.Azure (>= 3.3.18 < 4.0) - restriction: || (>= net452) (>= netstandard1.4)
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.4)
       Newtonsoft.Json (>= 10.0.3) - restriction: && (< net452) (>= netstandard1.4)
       System.Net.Http (>= 4.3) - restriction: && (< net452) (>= netstandard1.4)
-    Microsoft.Azure.KeyVault.WebKey (3.0.1) - restriction: >= netcoreapp2.1
+    Microsoft.Azure.KeyVault.WebKey (3.0.2) - restriction: >= netcoreapp2.1
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.4)
       Newtonsoft.Json (>= 10.0.3) - restriction: && (< net452) (>= netstandard1.4)
       System.Collections (>= 4.3) - restriction: && (< net452) (>= netstandard1.4)
@@ -875,7 +875,7 @@ NUGET
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.4)
       System.Diagnostics.Process (>= 4.3) - restriction: && (< net452) (>= netstandard1.4)
     Microsoft.CodeAnalysis.Analyzers (2.6.2) - restriction: >= netcoreapp2.1
-    Microsoft.CodeAnalysis.Common (2.9) - restriction: >= netcoreapp2.1
+    Microsoft.CodeAnalysis.Common (2.10) - restriction: >= netcoreapp2.1
       Microsoft.CodeAnalysis.Analyzers (>= 2.6.1) - restriction: >= netstandard1.3
       System.AppContext (>= 4.3) - restriction: >= netstandard1.3
       System.Collections (>= 4.3) - restriction: >= netstandard1.3
@@ -916,8 +916,8 @@ NUGET
       System.Xml.XDocument (>= 4.3) - restriction: >= netstandard1.3
       System.Xml.XmlDocument (>= 4.3) - restriction: >= netstandard1.3
       System.Xml.XPath.XDocument (>= 4.3) - restriction: >= netstandard1.3
-    Microsoft.CodeAnalysis.CSharp (2.9) - restriction: >= netcoreapp2.1
-      Microsoft.CodeAnalysis.Common (2.9)
+    Microsoft.CodeAnalysis.CSharp (2.10) - restriction: >= netcoreapp2.1
+      Microsoft.CodeAnalysis.Common (2.10)
     Microsoft.CodeAnalysis.Razor (2.1.2) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Razor.Language (>= 2.1.2) - restriction: || (>= net46) (>= netstandard2.0)
       Microsoft.CodeAnalysis.Common (>= 2.8) - restriction: || (>= net46) (>= netstandard2.0)
@@ -1052,13 +1052,13 @@ NUGET
       Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Logging (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netstandard2.0
-    Microsoft.Extensions.Identity.Core (2.1.3) - restriction: >= netcoreapp2.1
+    Microsoft.Extensions.Identity.Core (2.1.6) - restriction: >= netcoreapp2.1
       Microsoft.AspNetCore.Cryptography.KeyDerivation (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Logging (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netstandard2.0
       System.ComponentModel.Annotations (>= 4.5) - restriction: >= netstandard2.0
-    Microsoft.Extensions.Identity.Stores (2.1.3) - restriction: >= netcoreapp2.1
-      Microsoft.Extensions.Identity.Core (>= 2.1.3) - restriction: >= netstandard2.0
+    Microsoft.Extensions.Identity.Stores (2.1.6) - restriction: >= netcoreapp2.1
+      Microsoft.Extensions.Identity.Core (>= 2.1.6) - restriction: >= netstandard2.0
       Microsoft.Extensions.Logging (>= 2.1.1) - restriction: >= netstandard2.0
       System.ComponentModel.Annotations (>= 4.5) - restriction: >= netstandard2.0
     Microsoft.Extensions.Localization (2.1.1) - restriction: >= netcoreapp2.1
@@ -1094,7 +1094,7 @@ NUGET
       Newtonsoft.Json (>= 11.0.2) - restriction: >= netstandard2.0
     Microsoft.Extensions.Logging.TraceSource (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Logging (>= 2.1.1) - restriction: >= netstandard2.0
-    Microsoft.Extensions.ObjectPool (2.1.1) - restriction: >= netcoreapp2.1
+    Microsoft.Extensions.ObjectPool (2.1.6) - restriction: >= netcoreapp2.1
     Microsoft.Extensions.Options (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Primitives (>= 2.1.1) - restriction: >= netstandard2.0
@@ -1106,9 +1106,9 @@ NUGET
     Microsoft.Extensions.PlatformAbstractions (1.1) - restriction: >= netcoreapp2.1
       NETStandard.Library (>= 1.6.1) - restriction: || (>= net451) (>= netstandard1.3)
       System.Reflection.TypeExtensions (>= 4.3) - restriction: && (< net451) (>= netstandard1.3)
-    Microsoft.Extensions.Primitives (2.1.1) - restriction: >= netcoreapp2.1
+    Microsoft.Extensions.Primitives (2.1.6) - restriction: >= netcoreapp2.1
       System.Memory (>= 4.5.1) - restriction: >= netstandard2.0
-      System.Runtime.CompilerServices.Unsafe (>= 4.5.1) - restriction: >= netstandard2.0
+      System.Runtime.CompilerServices.Unsafe (>= 4.5.2) - restriction: >= netstandard2.0
     Microsoft.Extensions.WebEncoders (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1) - restriction: >= netstandard2.0
       Microsoft.Extensions.Options (>= 2.1.1) - restriction: >= netstandard2.0
@@ -1168,7 +1168,7 @@ NUGET
     Microsoft.Net.Http.Headers (2.1.1) - restriction: >= netcoreapp2.1
       Microsoft.Extensions.Primitives (>= 2.1.1) - restriction: >= netstandard2.0
       System.Buffers (>= 4.5) - restriction: >= netstandard2.0
-    Microsoft.NETCore.Platforms (2.1.1) - restriction: || (&& (>= dnxcore50) (>= netstandard2.0)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard2.0) (< win8) (< wpa81)) (&& (< net45) (>= netstandard2.0) (< xamarinios)) (>= netcoreapp2.0)
+    Microsoft.NETCore.Platforms (2.1.2) - restriction: || (&& (>= dnxcore50) (>= netstandard2.0)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard2.0) (< win8) (< wpa81)) (&& (< net45) (>= netstandard2.0) (< xamarinios)) (>= netcoreapp2.0)
     Microsoft.NETCore.Targets (2.1) - restriction: || (&& (>= dnxcore50) (>= netstandard2.0)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard2.0) (< win8) (< wpa81)) (&& (< monoandroid) (< net45) (>= netstandard2.0) (< win8) (< wpa81) (< xamarinios)) (>= netcoreapp2.1)
     Microsoft.Rest.ClientRuntime (2.3.18) - restriction: >= netcoreapp2.1
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.4)
