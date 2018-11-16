@@ -1,18 +1,21 @@
 import * as React from 'react';
-import Authenticate from 'react-openidconnect';
 
-import "./App.css";
-
-import OidcSettings from './config/oidc-settings';
-import logo from "./logo.svg";
-
-const Authenticated = (props: any) => {
-    if (props.user && props.user.profile && props.user.profile.name) {
-        return (<div>Hello {props.user.profile.name}</div>);
-    }
-
-    return null;
-};
+import './App.css';
+// import OidcSettings from './config/oidc-settings';
+// import logo from "./logo.svg";
+// import Authenticate from 'react-openidconnect';
+   
+// const Authenticated = (props: any) => {
+//     if (props.user && props.user.profile && props.user.profile.name) {
+//         return (<div>Hello {props.user.profile.name}</div>);
+//     }
+   
+//     return null;
+// };
+   
+// const NotAuthenticated = () => {
+//     return <div>You are not authenticated, please click here to authenticate.</div>;
+// };
 
 class App extends React.Component {
     public state: any;
@@ -41,29 +44,34 @@ class App extends React.Component {
         this.setState({ "user": undefined });
     } 
  
-    public NotAuthenticated() {
-        return <div>You are not authenticated, please click here to authenticate.</div>;
-    }
-
     public render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">React app with MSAL.js</h1>
-                </header>
-
-                <Authenticate 
-                    OidcSettings={OidcSettings} 
-                    userLoaded={this.userLoaded} 
-                    userunLoaded={this.userUnLoaded} 
-                    renderNotAuthenticated={this.NotAuthenticated}>
-
-                    <Authenticated user={this.state.user} />
-                </Authenticate>
+                <div className="header" />        
+                <div className="body">
+                    <div className="content" />
+                    <div className="sidebar" />      
+                </div>
+                <div className="footer" />
             </div>
         );
     }
+
+    // <div className="App">
+    //     <header className="App-header">
+    //         <img src={logo} className="App-logo" alt="logo"/>
+    //         <h1 className="App-title">React app with MSAL.js</h1>
+    //     </header>
+       
+    //     <Authenticate 
+    // OidcSettings={OidcSettings} 
+    // userLoaded={this.userLoaded} 
+    // userunLoaded={this.userUnLoaded} 
+    // renderNotAuthenticated={NotAuthenticated}>
+       
+    //     <Authenticated user={this.state.user} />
+    //     </Authenticate>
+    // </div>
 }
 
 export default App;
