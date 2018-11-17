@@ -1,8 +1,8 @@
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric'
 import React from 'react';
-// import Content from './components/Content'
+import Content from './components/Content'
 import Footer from './components/Footer'
-// import NavBar from './components/NavBar'
+import NavBar from './components/NavBar'
 import SidebarMenu from './components/SidebarMenu'
 
 import './App.css';
@@ -53,11 +53,11 @@ class App extends React.Component {
         return (
             <Fabric className="App">
                 <div className="header">
-                    <span>NavBar</span>
+                    <NavBar />
                 </div>
                 <div className="body">
                     <div className="content">
-                        <span>Content</span>
+                        <Content />
                     </div>
                     <div className="sidebar">
                         <SidebarMenu />

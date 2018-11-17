@@ -1,14 +1,10 @@
-import {SearchBox} from 'office-ui-fabric-react/lib/SearchBox'
 import React from 'react'
-import '../_styles/NavBar.css'
+import '../styles/NavBar.css'
 
-const NavBar = ({onChange, onSearch}: {onChange: any, onSearch: any}) => (
+const NavBar = () => (
   <div className="NavBar">
     <div className="logo ms-font-xl">
       <strong>Awesome App</strong>
-    </div>
-    <div className="searchbox">
-      <SearchBox labelText="Search" />
     </div>
   </div>
 )
