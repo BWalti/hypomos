@@ -1,26 +1,29 @@
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric'
 import React from 'react';
-import Content from './components/Content'
+// import Content from './components/Content'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import SidebarMenu from './components/SidebarMenu'
 
 import './styles/App.css';
-// import OidcSettings from './config/oidc-settings';
-// import logo from "./logo.svg";
-// import Authenticate from 'react-openidconnect';
 
-// const Authenticated = (props: any) => {
-//     if (props.user && props.user.profile && props.user.profile.name) {
-//         return (<div>Hello {props.user.profile.name}</div>);
-//     }
+import OidcSettings from './config/id-server-oidc-settings';
+// import OidcSettings from './config/ms-oidc-settings';
 
-//     return null;
-// };
+import Authenticate from 'react-openidconnect';
+import logo from "./logo.svg";
 
-// const NotAuthenticated = () => {
-//     return <div>You are not authenticated, please click here to authenticate.</div>;
-// };
+const Authenticated = (props: any) => {
+    if (props.user && props.user.profile && props.user.profile.name) {
+        return (<div>Hello {props.user.profile.name}</div>);
+    }
+
+    return null;
+};
+
+const NotAuthenticated = () => {
+    return <div>You are not authenticated, please click here to authenticate.</div>;
+};
 
 class App extends React.Component {
     public state: any;
@@ -35,11 +38,12 @@ class App extends React.Component {
             userInfo: null
         };
 
-        // this.userLoaded = this.userLoaded.bind(this); 
-        // this.userUnLoaded = this.userUnLoaded.bind(this);
+        this.userLoaded = this.userLoaded.bind(this);
+        this.userUnLoaded = this.userUnLoaded.bind(this);
     }
 
     public userLoaded(user: any) {
+        debugger;
         if (user) {
             this.setState({ user });
         }
@@ -57,7 +61,21 @@ class App extends React.Component {
                 </div>
                 <div className="body">
                     <div className="content">
-                        <Content />
+                        <div className="App">
+                            <header className="App-header">
+                                <img src={logo} className="App-logo" alt="logo" />
+                                <h1 className="App-title">React app with MSAL.js</h1>
+                            </header>
+
+                            <Authenticate
+                                OidcSettings={OidcSettings}
+                                userLoaded={this.userLoaded}
+                                userunLoaded={this.userUnLoaded}
+                                renderNotAuthenticated={NotAuthenticated}>
+
+                                <Authenticated user={this.state.user} />
+                            </Authenticate>
+                        </div>
                     </div>
                     <div className="sidebar">
                         <SidebarMenu />
@@ -70,21 +88,7 @@ class App extends React.Component {
         );
     }
 
-    // <div className="App">
-    //     <header className="App-header">
-    //         <img src={logo} className="App-logo" alt="logo"/>
-    //         <h1 className="App-title">React app with MSAL.js</h1>
-    //     </header>
 
-    //     <Authenticate 
-    // OidcSettings={OidcSettings} 
-    // userLoaded={this.userLoaded} 
-    // userunLoaded={this.userUnLoaded} 
-    // renderNotAuthenticated={NotAuthenticated}>
-
-    //     <Authenticated user={this.state.user} />
-    //     </Authenticate>
-    // </div>
 }
 
 export default App;
