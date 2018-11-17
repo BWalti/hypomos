@@ -4,7 +4,7 @@ import '../styles/NavBar.css'
 const NavBar = () => (
   <div className="NavBar">
     <div className="logo ms-font-xl">
-      <strong>Awesome App</strong>
+      <strong>Hypomos</strong>
     </div>
   </div>
 )

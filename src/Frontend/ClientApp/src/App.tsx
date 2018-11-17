@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import SidebarMenu from './components/SidebarMenu'
 
-import './App.css';
+import './styles/App.css';
 // import OidcSettings from './config/oidc-settings';
 // import logo from "./logo.svg";
 // import Authenticate from 'react-openidconnect';
