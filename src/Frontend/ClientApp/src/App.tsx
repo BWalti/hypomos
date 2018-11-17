@@ -1,23 +1,23 @@
-import * as React from 'react';
-import {Fabric} from 'office-ui-fabric-react/lib/Fabric'
-import NavBar from './components/NavBar.js'
-import SidebarMenu from './components/SidebarMenu.js'
-import Content from './components/Content.js'
-import Footer from './components/Footer.js'
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric'
+import React from 'react';
+// import Content from './components/Content'
+import Footer from './components/Footer'
+// import NavBar from './components/NavBar'
+import SidebarMenu from './components/SidebarMenu'
 
 import './App.css';
 // import OidcSettings from './config/oidc-settings';
 // import logo from "./logo.svg";
 // import Authenticate from 'react-openidconnect';
-   
+
 // const Authenticated = (props: any) => {
 //     if (props.user && props.user.profile && props.user.profile.name) {
 //         return (<div>Hello {props.user.profile.name}</div>);
 //     }
-   
+
 //     return null;
 // };
-   
+
 // const NotAuthenticated = () => {
 //     return <div>You are not authenticated, please click here to authenticate.</div>;
 // };
@@ -43,30 +43,30 @@ class App extends React.Component {
         if (user) {
             this.setState({ user });
         }
-    } 
-  
+    }
+
     public userUnLoaded() {
         this.setState({ user: undefined });
-    } 
- 
+    }
+
     public render() {
         return (
             <Fabric className="App">
-        <div className="header">
-          <NavBar />
-        </div>        
-        <div className="body">
-          <div className="content">
-            <Content />
-          </div>
-          <div className="sidebar">
-            <SidebarMenu />
-          </div>      
-        </div>
-        <div className="footer">
-          <Footer />
-        </div>
-      </Fabric>
+                <div className="header">
+                    <span>NavBar</span>
+                </div>
+                <div className="body">
+                    <div className="content">
+                        <span>Content</span>
+                    </div>
+                    <div className="sidebar">
+                        <SidebarMenu />
+                    </div>
+                </div>
+                <div className="footer">
+                    <Footer />
+                </div>
+            </Fabric>
         );
     }
 
@@ -75,13 +75,13 @@ class App extends React.Component {
     //         <img src={logo} className="App-logo" alt="logo"/>
     //         <h1 className="App-title">React app with MSAL.js</h1>
     //     </header>
-       
+
     //     <Authenticate 
     // OidcSettings={OidcSettings} 
     // userLoaded={this.userLoaded} 
     // userunLoaded={this.userUnLoaded} 
     // renderNotAuthenticated={NotAuthenticated}>
-       
+
     //     <Authenticated user={this.state.user} />
     //     </Authenticate>
     // </div>

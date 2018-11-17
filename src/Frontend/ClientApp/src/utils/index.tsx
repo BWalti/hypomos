@@ -11,7 +11,7 @@ const LOCATIONS = ['Seattle', 'New York', 'Chicago', 'Los Angeles', 'Portland']
  * @param {Array} list List from were to take elements.
  * @return {Any} Random element from the list.
  */
-export const randomFrom = list => (
+export const randomFrom = (list: any) => (
   list[Math.floor(Math.random() * list.length)]
 )
 /**
@@ -19,9 +19,9 @@ export const randomFrom = list => (
  * @param {Number} wordCount The lenght in words of the string.
  * @return {String} Random string of lorem ipsum words.
  */
-export const lorem = wordCount => (
+export const lorem = (wordCount: any) => (
   Array.apply(null, Array(wordCount))
-  .map(item => randomFrom(LOREM_IPSUM_WORDS))
+  .map((item: any) => randomFrom(LOREM_IPSUM_WORDS))
   .join(' ')
 )
 /**
@@ -29,27 +29,27 @@ export const lorem = wordCount => (
  * @param {Any} x Any value.
  * @return {Any} returns the given value.
  */
-export const identity = x => x
+export const identity = (x: any) => x;
 /**
  * Creates a valid selection item
  * @param {Number} count Number of items to return.
  * @param {Number} count Index to start the count. Defaults to 0.
  * @return {Array} List of valid selection items.
  */
-export const createListItems = (count, startIndex=0) => (
+export const createListItems = (count: number, startIndex=0) => (
   Array.apply(null, Array(count))
-  .map((item, index) => {
-    let size = 150 + Math.round(Math.random() * 100)
+  .map((item: any, index: number) => {
+    const size = 150 + Math.round(Math.random() * 100)
     return {
-      thumbnail: `//placehold.it/${size}x${size}`,
-      key: `${item}-${index + startIndex} ${lorem(4)}`,
-      name: lorem(5),
-      description: lorem(10 + Math.round(Math.random() * 50)),
       color: randomFrom(COLORS),
-      shape: randomFrom(SHAPES),
-      location: randomFrom(LOCATIONS),
-      width: size,
+      description: lorem(10 + Math.round(Math.random() * 50)),
       height: size,
+      key: `${item}-${index + startIndex} ${lorem(4)}`,
+      location: randomFrom(LOCATIONS),
+      name: lorem(5),
+      shape: randomFrom(SHAPES),
+      thumbnail: `//placehold.it/${size}x${size}`,
+      width: size,
     }
   })
 )
