@@ -1,9 +1,6 @@
 source https://api.nuget.org/v3/index.json
 
-nuget Microsoft.AspNetCore.All ~> 2.0
-nuget Microsoft.AspNetCore.App ~> 2.1
-nuget Microsoft.AspNetCore.Razor.Design ~> 2.1
-nuget Microsoft.VisualStudio.Azure.Containers.Tools.Targets ~> 1.0
-nuget IdentityServer4.AccessTokenValidation ~> 2.0
-nuget IdentityServer4 ~> 2.2
-nuget IdentityServer4.EntityFramework ~> 2.1
+nuget Microsoft.AspNetCore.App
+nuget IdentityServer4.AccessTokenValidation
+nuget IdentityServer4.EntityFramework
+nuget WindowsAzure.Storage
