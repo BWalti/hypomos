@@ -1,8 +1,0 @@
-FROM promact/docker-dotnet-nodejs AS base
-EXPOSE 5001
-EXPOSE 44346
-
-FROM base AS final
-WORKDIR /app
-COPY bin/Debug/netcoreapp2.1/publish .
-ENTRYPOINT ["dotnet", "Web.dll"]
