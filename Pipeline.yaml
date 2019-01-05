@@ -1,4 +1,6 @@
 name: CI-simple
+environment:
+- LANG: C
 stages:
 - name: clone
   steps:
