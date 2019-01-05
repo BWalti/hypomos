@@ -1,15 +1,14 @@
 stages:
-- name: Build
+- name: Frontend install NPM packages
   steps:
   - runScriptConfig:
-      image: promact/docker-dotnet-nodejs
-      shellScript: dotnet publish
-- name: Publish
+      image: node:latest
+      shellScript: |-
+        cd src/Frontend/ClientApp
+        npm install
+- name: Dotnet Build
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./web/Dockerfile.ci
-      buildContext: ./web/
-      tag: hypomos:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: index.docker.io
+  - runScriptConfig:
+      image: microsoft/dotnet
+      shellScript: dotnet publish
 timeout: 60
