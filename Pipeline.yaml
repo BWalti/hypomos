@@ -1,6 +1,7 @@
 name: CI-simple
 environment:
-- LANG: C
+- LANG: C.UTF-8
+- LANGUAGE: C.UTF-8
 stages:
 - name: clone
   steps:
@@ -9,15 +10,15 @@ stages:
       branchCondition: only
       sourceCodeCredentialId: user-qpt9r:c-n8ssr-github-bwalti
       url: https://github.com/BWalti/hypomos.git
+- name: Frontend install NPM packages
+  steps:
+  - runScriptConfig:
+      image: node
+      isShell: true
+      shellScript: cd src/Frontend/ClientApp && npm install
 - name: build
   steps:
   - runScriptConfig:
-      image: promact/docker-dotnet-nodejs
+      image: microsoft/dotnet
       isShell: true
       shellScript: dotnet publish
-- name: publish
-  steps:
-  - publishImageConfig:
-      buildContext: ./web/
-      dockerfilePath: ./web/Dockerfile.ci
-      tag: hypomos:${CICD_EXECUTION_SEQUENCE}
