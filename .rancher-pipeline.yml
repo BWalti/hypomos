@@ -9,6 +9,6 @@ stages:
 - name: Dotnet Build
   steps:
   - runScriptConfig:
-      image: microsoft/dotnet
+      image: promact/docker-dotnet-nodejs
       shellScript: dotnet publish
 timeout: 60
