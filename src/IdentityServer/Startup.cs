@@ -31,7 +31,8 @@ namespace Hypomos.IdentityServer
                 .AddInMemoryApiResources(Config.GetApiResources()).AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers());
 
-            services.AddAuthentication().AddMicrosoftAccount(
+            services.AddAuthentication()
+                    .AddMicrosoftAccount(
                 options =>
                     {
                         options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;

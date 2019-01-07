@@ -4,5 +4,5 @@ export default {
     post_logout_redirect_uri: 'http://localhost:5003/index.html', 
     redirect_uri: 'http://localhost:5003/index.html', 
     response_type: 'id_token token', 
-    scope: 'openid profile'
+    scope: 'openid profile Files.Read.All'
 };
