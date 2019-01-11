@@ -56,6 +56,10 @@
           "IdentityServer": {
             "ProfileName":  "IdentityServer",
             "StartProject": true
+          },
+          "Gateway": {
+            "ProfileName":  "Gateway",
+            "StartProject": true
           }
         }
       }

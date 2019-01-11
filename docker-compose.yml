@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: src/Api/Dockerfile
+  frontend:
+    image: ${DOCKER_REGISTRY-}frontend
+    build:
+      context: .
+      dockerfile: src/Frontend/Dockerfile
+  identityServer:
+    image: ${DOCKER_REGISTRY-}identityServer
+    build:
+      context: .
+      dockerfile: src/IdentityServer/Dockerfile
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    build:
+      context: .
+      dockerfile: src/Gateway/Dockerfile

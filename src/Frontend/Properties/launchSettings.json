@@ -10,7 +10,6 @@
   "profiles": {
     "Frontend": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "http://localhost:5003",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

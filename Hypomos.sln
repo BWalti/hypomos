@@ -20,7 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{E6635D9D-9
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{4CB9E984-9F3A-46AD-9584-12E6A37998E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "src\Gateway\Gateway.csproj", "{35EEC2A9-2E51-4903-9A1F-B64235880AFE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A771F44F-0BB6-4647-BABA-DDDD5FA09977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +42,14 @@ Global
 		{9A1FC80E-E0C9-44E1-8B92-3FB747295223}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A1FC80E-E0C9-44E1-8B92-3FB747295223}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A1FC80E-E0C9-44E1-8B92-3FB747295223}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CB9E984-9F3A-46AD-9584-12E6A37998E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CB9E984-9F3A-46AD-9584-12E6A37998E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CB9E984-9F3A-46AD-9584-12E6A37998E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CB9E984-9F3A-46AD-9584-12E6A37998E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EEC2A9-2E51-4903-9A1F-B64235880AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EEC2A9-2E51-4903-9A1F-B64235880AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EEC2A9-2E51-4903-9A1F-B64235880AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EEC2A9-2E51-4903-9A1F-B64235880AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

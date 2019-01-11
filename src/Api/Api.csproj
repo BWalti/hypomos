@@ -6,6 +6,7 @@
     <UserSecretsId>3f5f2509-0acb-46f9-8284-4b8128e54b2a</UserSecretsId>
     <AssemblyName>Hypomos.Api</AssemblyName>
     <RootNamespace>Hypomos.Api</RootNamespace>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="wwwroot\**" />
