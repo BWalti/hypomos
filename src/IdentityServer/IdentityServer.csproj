@@ -16,6 +16,9 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProxySupport\ProxySupport.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Update="Microsoft.AspNetCore.Razor.Design" />
   </ItemGroup>
 </Project>

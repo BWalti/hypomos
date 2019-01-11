@@ -12,14 +12,18 @@ namespace Hypomos.IdentityServer
     {
         public static IWebHost BuildWebHost(string[] args)
         {
-            return WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().Build();
+            return WebHost
+                .CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
         }
 
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer";
 
-            BuildWebHost(args).Run();
+            BuildWebHost(args)
+                .Run();
         }
     }
 }

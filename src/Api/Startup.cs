@@ -1,10 +1,12 @@
 ﻿namespace Hypomos.Api
 {
+    using System.Collections.Generic;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using ProxySupport;
 
     public class Startup
     {
@@ -46,10 +48,16 @@
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseReverseProxy(new ReverseProxyOptions
+            {
+                AllowedHosts = new List<string>
+                {
+                    "localhost:5005"
+                }
+            });
+
             app.UseCors("default");
-
             app.UseAuthentication();
-
             app.UseMvc();
         }
     }

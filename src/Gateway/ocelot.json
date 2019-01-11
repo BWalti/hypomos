@@ -1,6 +1,7 @@
 {
   "ReRoutes": [
     {
+      "Priority": 10,
       "UpstreamPathTemplate": "/api/{everything}",
       "UpstreamHttpMethod": ["Get", "Post", "Delete", "Put"],
       "DownstreamPathTemplate": "/api/{everything}",
@@ -10,9 +11,15 @@
           "Host": "localhost",
           "Port": 5001
         }
-      ]
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-Proto": "http",
+        "X-Forwarded-Host":  "localhost:5005",
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
     },
     {
+      "Priority": 10,
       "UpstreamPathTemplate": "/auth/{everything}",
       "UpstreamHttpMethod": ["Get","Post"],
       "DownstreamPathTemplate": "/{everything}",
@@ -22,13 +29,37 @@
           "Host": "localhost",
           "Port": 5000
         }
-      ]
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-Proto": "http",
+        "X-Forwarded-Host":  "localhost:5005",
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
     },
     {
-      "UpstreamPathTemplate": "/{everything}",
-      "UpstreamHttpMethod": ["Get"],
-      "DownstreamPathTemplate": "/{everything}",
+      "Priority": 1, 
+      "UpstreamPathTemplate": "/{url}",
+      "UpstreamHttpMethod": ["Get", "Post", "Options"],
+      "DownstreamPathTemplate": "/{url}",
       "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-Proto": "http",
+        "X-Forwarded-Host":  "localhost:5005",
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    {
+      "Priority": 5, 
+      "DownstreamPathTemplate": "/{catchAll}",
+      "UpstreamPathTemplate": "/{catchAll}",
+      "UpstreamHttpMethod": ["Get", "Options"],
+      "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

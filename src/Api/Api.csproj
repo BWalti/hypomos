@@ -19,6 +19,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProxySupport\ProxySupport.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Update="Microsoft.AspNetCore.Razor.Design" />
   </ItemGroup>
 </Project>

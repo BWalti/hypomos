@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "src\Gateway\Gate
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A771F44F-0BB6-4647-BABA-DDDD5FA09977}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxySupport", "src\ProxySupport\ProxySupport.csproj", "{A300BCC4-4746-48DB-B224-0989368C2C36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A771F44F-0BB6-4647-BABA-DDDD5FA09977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A300BCC4-4746-48DB-B224-0989368C2C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A300BCC4-4746-48DB-B224-0989368C2C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A300BCC4-4746-48DB-B224-0989368C2C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A300BCC4-4746-48DB-B224-0989368C2C36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

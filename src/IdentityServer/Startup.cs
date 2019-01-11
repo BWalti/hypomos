@@ -3,17 +3,32 @@
 
 namespace Hypomos.IdentityServer
 {
+    using System.Collections.Generic;
     using IdentityServer4;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.HttpOverrides;
     using Microsoft.Extensions.DependencyInjection;
+    using ProxySupport;
 
     public class Startup
     {
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            app.UseReverseProxy(new ReverseProxyOptions
+            {
+                ProxyHidesPathPrefix = "/auth",
+                AllowedHosts = new List<string>
+                {
+                    "localhost:5005"
+                },
+                ForwardedHeaders = ForwardedHeaders.All
+            });
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseIdentityServer();
 
@@ -26,14 +41,19 @@ namespace Hypomos.IdentityServer
             services.AddMvc();
 
             // configure identity server with in-memory stores, keys, clients and scopes
-            services.AddIdentityServer().AddDeveloperSigningCredential()
+            services
+                .AddIdentityServer(options =>
+                {
+                    options.IssuerUri = "http://localhost:5005/auth";
+                })
+                .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources()).AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers());
 
             services.AddAuthentication()
-                    .AddMicrosoftAccount(
-                options =>
+                .AddMicrosoftAccount(
+                    options =>
                     {
                         options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                         options.SaveTokens = true;

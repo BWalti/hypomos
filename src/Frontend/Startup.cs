@@ -1,11 +1,13 @@
 ﻿namespace Hypomos.Frontend
 {
+    using System.Collections.Generic;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using ProxySupport;
 
     public class Startup
     {
@@ -29,6 +31,14 @@
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseReverseProxy(new ReverseProxyOptions
+            {
+                AllowedHosts = new List<string>
+                {
+                    "localhost:5005"
+                }
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -36,10 +46,10 @@
             else
             {
                 app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

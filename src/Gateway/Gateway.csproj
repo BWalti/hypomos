@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>Hypomos.Gateway</AssemblyName>
+    <RootNamespace>Hypomos.Gateway</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -30,6 +30,7 @@
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseWebSockets();
             app.UseOcelot()
                .Wait();
         }
