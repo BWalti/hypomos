@@ -24,7 +24,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "src\Gateway\Gate
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A771F44F-0BB6-4647-BABA-DDDD5FA09977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxySupport", "src\ProxySupport\ProxySupport.csproj", "{A300BCC4-4746-48DB-B224-0989368C2C36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxySupport", "src\ProxySupport\ProxySupport.csproj", "{A300BCC4-4746-48DB-B224-0989368C2C36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FBD107D1-DE1E-4071-B938-E508630E0442}"
+	ProjectSection(SolutionItems) = preProject
+		.rancher-pipeline.yml = .rancher-pipeline.yml
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
