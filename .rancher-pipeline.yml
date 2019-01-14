@@ -10,5 +10,5 @@ stages:
   steps:
   - runScriptConfig:
       image: bibolorean/dotnet-nodejs
-      shellScript: dotnet publish
+      shellScript: dotnet publish Hypomos.sln
 timeout: 60
