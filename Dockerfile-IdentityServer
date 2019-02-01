@@ -9,6 +9,7 @@ COPY ./src/ProxySupport/ProxySupport.csproj ./src/ProxySupport/ProxySupport.cspr
 WORKDIR /src/src/IdentityServer/
 RUN dotnet restore
 COPY ./src/IdentityServer ./src/IdentityServer
+COPY ./src/ProxySupport ./src/ProxySupport
 
 WORKDIR /src/src/IdentityServer/
 RUN dotnet restore "IdentityServer.csproj"

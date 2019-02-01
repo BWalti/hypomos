@@ -9,6 +9,7 @@ COPY ./src/ProxySupport/ProxySupport.csproj ./src/ProxySupport/ProxySupport.cspr
 WORKDIR /src/src/Api/
 RUN dotnet restore
 COPY ./src/Api ./src/Api
+COPY ./src/ProxySupport ./src/ProxySupport
 
 WORKDIR /src/src/Api/
 RUN dotnet build "Api.csproj" -c Debug -o /app
