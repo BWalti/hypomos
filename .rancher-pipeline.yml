@@ -5,28 +5,28 @@ stages:
       dockerfilePath: ./Dockerfile-API
       buildContext: .
       tag: hypomos-api:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34173
     env:
       PLUGIN_STORAGE_PATH: /var/lib/docker/1
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-Frontend
       buildContext: .
       tag: hypomos-frontend:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34173
     env:
       PLUGIN_STORAGE_PATH: /var/lib/docker/2
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-Gateway
       buildContext: .
       tag: hypomos-gateway:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34173
     env:
       PLUGIN_STORAGE_PATH: /var/lib/docker/3
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-IdentityServer
       buildContext: .
       tag: hypomos-identityserver:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34173
     env:
       PLUGIN_STORAGE_PATH: /var/lib/docker/4
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
