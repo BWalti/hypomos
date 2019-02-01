@@ -1,21 +1,27 @@
 stages:
-- name: Build Images
+- name: Build Image API
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-API
       buildContext: .
       tag: hypomos-api:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34173
+- name: Build Image Frontend
+  steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-Frontend
       buildContext: .
       tag: hypomos-frontend:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34173
+- name: Build Image Gateway
+  steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-Gateway
       buildContext: .
       tag: hypomos-gateway:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34173
+- name: Build Image IdentityServer
+  steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile-IdentityServer
       buildContext: .
