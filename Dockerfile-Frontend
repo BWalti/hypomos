@@ -13,6 +13,9 @@ COPY ./src/ProxySupport ./src/ProxySupport
 
 WORKDIR /src/src/Frontend/
 RUN dotnet restore "Frontend.csproj"
+WORKDIR /src/src/Frontend/ClientApp
+RUN npm install
+WORKDIR /src/src/Frontend/
 RUN dotnet build "Frontend.csproj" -c Debug -o /app
 
 FROM build AS publish
