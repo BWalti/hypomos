@@ -23,12 +23,15 @@ namespace Hypomos.IdentityServer
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var allowedHosts = this.Configuration["AllowedHosts"];
+
             app.UseReverseProxy(new ReverseProxyOptions
             {
+                
                 ProxyHidesPathPrefix = "/auth",
                 AllowedHosts = new List<string>
                 {
-                    "localhost:5005"
+                    allowedHosts
                 },
                 ForwardedHeaders = ForwardedHeaders.All
             });
@@ -46,13 +49,15 @@ namespace Hypomos.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var allowedHosts = this.Configuration["AllowedHosts"];
+
             services.AddMvc();
 
             // configure identity server with in-memory stores, keys, clients and scopes
             services
                 .AddIdentityServer(options =>
                 {
-                    options.IssuerUri = "http://localhost:5005/auth";
+                    options.IssuerUri = $"{allowedHosts}/auth";
                 })
                 .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
