@@ -4,7 +4,10 @@ EXPOSE 5003
 
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
-COPY . .
+COPY ./src/Api/Api.csproj ./src/Api/Api.csproj
+WORKDIR /src/src/Api/
+RUN dotnet restore
+COPY ./src/Api ./src/Api
 
 WORKDIR /src/src/Api/
 RUN dotnet build "Api.csproj" -c Debug -o /app

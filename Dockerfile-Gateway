@@ -4,7 +4,10 @@ EXPOSE 5003
 
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
-COPY . .
+COPY ./src/Gateway/Gateway.csproj ./src/Gateway/Gateway.csproj
+WORKDIR /src/src/Gateway/
+RUN dotnet restore
+COPY ./src/Gateway ./src/Gateway
 
 WORKDIR /src/src/Gateway/
 RUN dotnet restore "Gateway.csproj"

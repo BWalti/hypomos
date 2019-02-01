@@ -4,7 +4,10 @@ EXPOSE 5003
 
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
-COPY . .
+COPY ./src/IdentityServer/IdentityServer.csproj ./src/IdentityServer/IdentityServer.csproj
+WORKDIR /src/src/IdentityServer/
+RUN dotnet restore
+COPY ./src/IdentityServer ./src/IdentityServer
 
 WORKDIR /src/src/IdentityServer/
 RUN dotnet restore "IdentityServer.csproj"
