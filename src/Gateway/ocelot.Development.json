@@ -8,8 +8,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5001
         }
       ],
       "UpstreamHeaderTransform": {
@@ -26,13 +26,13 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-identityserver",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5000
         }
       ],
       "UpstreamHeaderTransform": {
         "X-Forwarded-Proto": "http",
-        "X-Forwarded-Host":  "192.168.5.17:80",
+        "X-Forwarded-Host":  "localhost:5005",
         "X-Forwarded-For": "{RemoteIpAddress}"
       }
     },
@@ -44,13 +44,13 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-frontend",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5003
         }
       ],
       "UpstreamHeaderTransform": {
         "X-Forwarded-Proto": "http",
-        "X-Forwarded-Host":  "192.168.5.17:80",
+        "X-Forwarded-Host":  "localhost:5005",
         "X-Forwarded-For": "{RemoteIpAddress}"
       }
     },
@@ -62,8 +62,8 @@
       "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-frontend",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5003
         }
       ]
     }

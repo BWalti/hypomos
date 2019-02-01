@@ -7,22 +7,29 @@ namespace Hypomos.IdentityServer
 
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
 
     public class Program
     {
-        public static IWebHost BuildWebHost(string[] args)
-        {
-            return WebHost
-                .CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-        }
-
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer";
 
-            BuildWebHost(args)
+            WebHost
+                .CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config
+                        .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+                        .AddCommandLine(args)
+                        .AddJsonFile("appsettings.json", true, true)
+                        .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+                        .AddDockerSecrets("/run/secrets", optional: true)
+                        .AddUserSecrets<Program>(optional: true)
+                        .AddEnvironmentVariables();
+                })
+                .UseStartup<Startup>()
+                .Build()
                 .Run();
         }
     }

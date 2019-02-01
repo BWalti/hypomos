@@ -8,11 +8,19 @@ namespace Hypomos.IdentityServer
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.HttpOverrides;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using ProxySupport;
 
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            this.Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseReverseProxy(new ReverseProxyOptions
