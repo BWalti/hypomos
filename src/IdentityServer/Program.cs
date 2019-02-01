@@ -24,7 +24,6 @@ namespace Hypomos.IdentityServer
                         .AddCommandLine(args)
                         .AddJsonFile("appsettings.json", true, true)
                         .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
-                        .AddDockerSecrets("/run/secrets", optional: true)
                         .AddUserSecrets<Program>(optional: true)
                         .AddEnvironmentVariables();
                 })

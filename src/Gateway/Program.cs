@@ -22,7 +22,6 @@
                            .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
                            .AddJsonFile("ocelot.json")
                            .AddJsonFile($"ocelot.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
-                           .AddDockerSecrets("/run/secrets", optional: true)
                            .AddUserSecrets<Program>(optional: true)
                            .AddEnvironmentVariables();
                    })

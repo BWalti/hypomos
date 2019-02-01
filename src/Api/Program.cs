@@ -21,7 +21,6 @@
                          .AddCommandLine(args)
                          .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                          .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
-                         .AddDockerSecrets("/run/secrets", optional: true)
                          .AddUserSecrets<Program>(optional: true)
                          .Build();
 
