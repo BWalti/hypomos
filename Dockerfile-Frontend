@@ -5,6 +5,7 @@ EXPOSE 5003
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
 COPY ./src/Frontend/Frontend.csproj ./src/Frontend/Frontend.csproj
+COPY ./src/ProxySupport/ProxySupport.csproj ./src/ProxySupport/ProxySupport.csproj
 WORKDIR /src/src/Frontend/
 RUN dotnet restore
 COPY ./src/Frontend ./src/Frontend

@@ -5,6 +5,7 @@ EXPOSE 5003
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
 COPY ./src/Api/Api.csproj ./src/Api/Api.csproj
+COPY ./src/ProxySupport/ProxySupport.csproj ./src/ProxySupport/ProxySupport.csproj
 WORKDIR /src/src/Api/
 RUN dotnet restore
 COPY ./src/Api ./src/Api
