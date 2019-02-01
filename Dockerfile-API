@@ -1,0 +1,19 @@
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
+WORKDIR /app
+EXPOSE 5003
+
+FROM bibolorean/dotnet-nodejs AS build
+WORKDIR /src
+COPY . .
+
+WORKDIR /src/src/Api/
+RUN dotnet build "Api.csproj" -c Debug -o /app
+
+FROM build AS publish
+WORKDIR /src/src/Api
+RUN dotnet publish "Api.csproj" -c Debug -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "Hypomos.Api.dll"]

@@ -1,14 +1,24 @@
 stages:
-- name: Frontend install NPM packages
+- name: Build Images
   steps:
-  - runScriptConfig:
-      image: node:latest
-      shellScript: |-
-        cd src/Frontend/ClientApp
-        npm install
-- name: Dotnet Build
-  steps:
-  - runScriptConfig:
-      image: bibolorean/dotnet-nodejs
-      shellScript: dotnet publish Hypomos.sln
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile-API
+      buildContext: .
+      tag: hypomos-api:${CICD_EXECUTION_SEQUENCE}
+      registry: 127.0.0.1:34173
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile-Frontend
+      buildContext: .
+      tag: hypomos-frontend:${CICD_EXECUTION_SEQUENCE}
+      registry: 127.0.0.1:34173
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile-Gateway
+      buildContext: .
+      tag: hypomos-gateway:${CICD_EXECUTION_SEQUENCE}
+      registry: 127.0.0.1:34173
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile-IdentityServer
+      buildContext: .
+      tag: hypomos-identityserver:${CICD_EXECUTION_SEQUENCE}
+      registry: 127.0.0.1:34173
 timeout: 60
