@@ -13,7 +13,6 @@ COPY ./src/Frontend ./src/Frontend
 COPY ./src/ProxySupport ./src/ProxySupport
 
 WORKDIR /src/src/Frontend/
-RUN dotnet restore "Frontend.csproj"
 RUN dotnet build "Frontend.csproj" -c Debug -o /app
 
 FROM build AS publish

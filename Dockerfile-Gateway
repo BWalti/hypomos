@@ -7,10 +7,10 @@ WORKDIR /src
 COPY ./src/Gateway/Gateway.csproj ./src/Gateway/Gateway.csproj
 WORKDIR /src/src/Gateway/
 RUN dotnet restore
+WORKDIR /src
 COPY ./src/Gateway ./src/Gateway
 
 WORKDIR /src/src/Gateway/
-RUN dotnet restore "Gateway.csproj"
 RUN dotnet build "Gateway.csproj" -c Debug -o /app
 
 FROM build AS publish

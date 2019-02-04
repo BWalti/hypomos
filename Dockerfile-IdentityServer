@@ -8,11 +8,11 @@ COPY ./src/IdentityServer/IdentityServer.csproj ./src/IdentityServer/IdentitySer
 COPY ./src/ProxySupport/ProxySupport.csproj ./src/ProxySupport/ProxySupport.csproj
 WORKDIR /src/src/IdentityServer/
 RUN dotnet restore
+WORKDIR /src
 COPY ./src/IdentityServer ./src/IdentityServer
 COPY ./src/ProxySupport ./src/ProxySupport
 
 WORKDIR /src/src/IdentityServer/
-RUN dotnet restore "IdentityServer.csproj"
 RUN dotnet build "IdentityServer.csproj" -c Debug -o /app
 
 FROM build AS publish
