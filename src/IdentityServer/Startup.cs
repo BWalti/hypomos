@@ -31,7 +31,8 @@ namespace Hypomos.IdentityServer
                 ProxyHidesPathPrefix = "/auth",
                 AllowedHosts = new List<string>
                 {
-                    allowedHosts
+                    allowedHosts,
+                    "localhost:5000"
                 },
                 ForwardedHeaders = ForwardedHeaders.All
             });

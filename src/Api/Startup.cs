@@ -27,7 +27,7 @@
             services.AddAuthentication("Bearer")
                     .AddJwtBearer(options =>
                     {
-                        options.Authority = "http://localhost:5000";
+                        options.Authority = "http://localhost:5005";
                         options.RequireHttpsMetadata = false;
 
                         options.Audience = "api1";
