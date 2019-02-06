@@ -65,7 +65,12 @@
           "Host": "localhost",
           "Port": 5003
         }
-      ]
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-Proto": "ws",
+        "X-Forwarded-Host":  "localhost:5005",
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
     }
   ],
   "GlobalConfiguration": {

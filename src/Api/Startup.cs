@@ -19,6 +19,9 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var authority = this.Configuration["Authority"];
+            var origin = this.Configuration["Origin"];
+
             services.AddMvcCore()
                     .AddAuthorization()
                     .AddJsonFormatters()
@@ -27,7 +30,7 @@
             services.AddAuthentication("Bearer")
                     .AddJwtBearer(options =>
                     {
-                        options.Authority = "http://localhost:5005";
+                        options.Authority = authority;
                         options.RequireHttpsMetadata = false;
 
                         options.Audience = "api1";
@@ -39,7 +42,7 @@
                 options.AddPolicy("default",
                                   policy =>
                                   {
-                                      policy.WithOrigins("http://localhost:5003")
+                                      policy.WithOrigins(origin)
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                                   });
@@ -48,11 +51,13 @@
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var allowedHosts = this.Configuration["AllowedHosts"];
+
             app.UseReverseProxy(new ReverseProxyOptions
             {
                 AllowedHosts = new List<string>
                 {
-                    "localhost:5005"
+                    allowedHosts
                 }
             });
 

@@ -27,12 +27,10 @@ namespace Hypomos.IdentityServer
 
             app.UseReverseProxy(new ReverseProxyOptions
             {
-                
                 ProxyHidesPathPrefix = "/auth",
                 AllowedHosts = new List<string>
                 {
-                    allowedHosts,
-                    "localhost:5000"
+                    allowedHosts
                 },
                 ForwardedHeaders = ForwardedHeaders.All
             });
@@ -50,7 +48,7 @@ namespace Hypomos.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var allowedHosts = this.Configuration["AllowedHosts"];
+            var origin = this.Configuration["Origin"];
 
             services.AddMvc();
 
@@ -58,11 +56,12 @@ namespace Hypomos.IdentityServer
             services
                 .AddIdentityServer(options =>
                 {
-                    options.IssuerUri = $"{allowedHosts}/auth";
+                    options.IssuerUri = $"{origin}/auth";
+                    options.PublicOrigin = origin;
                 })
                 .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApiResources()).AddInMemoryClients(Config.GetClients())
+                .AddInMemoryApiResources(Config.GetApiResources()).AddInMemoryClients(Config.GetClients(origin))
                 .AddTestUsers(Config.GetUsers());
 
             services.AddAuthentication()

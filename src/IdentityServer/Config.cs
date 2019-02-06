@@ -20,7 +20,7 @@ namespace Hypomos.IdentityServer
         }
 
         // clients want to access resources (aka scopes)
-        public static IEnumerable<Client> GetClients()
+        public static IEnumerable<Client> GetClients(string origin)
         {
             // client credentials client
             return new List<Client>
@@ -38,15 +38,15 @@ namespace Hypomos.IdentityServer
                     },
                     RedirectUris =
                     {
-                        "http://localhost:5005/index.html"
+                        $"{origin}/index.html"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://localhost:5005/index.html"
+                        $"{origin}/index.html"
                     },
                     AllowedCorsOrigins =
                     {
-                        "http://localhost:5005"
+                        $"{origin}"
                     },
                     AllowedScopes =
                     {
