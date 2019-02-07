@@ -7,7 +7,7 @@ import SidebarMenu from './components/SidebarMenu'
 
 import './styles/App.css';
 
-import OidcSettings from './config/id-server-oidc-settings';
+// import OidcSettings from './config/id-server-oidc-settings';
 // import OidcSettings from './config/ms-oidc-settings';
 
 import Authenticate from 'react-openidconnect';
@@ -42,6 +42,18 @@ class App extends React.Component {
         this.userUnLoaded = this.userUnLoaded.bind(this);
     }
 
+    public getOidcSettings() {
+        const baseAddress = location.protocol + '//' + location.host;
+        return {
+            authority: baseAddress + '/auth',
+            client_id: 'js',
+            post_logout_redirect_uri: baseAddress + '/index.html', 
+            redirect_uri: baseAddress + '/index.html', 
+            response_type: 'id_token token', 
+            scope: 'openid profile Files.Read.All'
+        };
+    }
+
     public userLoaded(user: any) {
         debugger;
         if (user) {
@@ -68,7 +80,7 @@ class App extends React.Component {
                             </header>
 
                             <Authenticate
-                                OidcSettings={OidcSettings}
+                                OidcSettings={this.getOidcSettings()}
                                 userLoaded={this.userLoaded}
                                 userunLoaded={this.userUnLoaded}
                                 renderNotAuthenticated={NotAuthenticated}>
@@ -87,8 +99,6 @@ class App extends React.Component {
             </Fabric>
         );
     }
-
-
 }
 
 export default App;
