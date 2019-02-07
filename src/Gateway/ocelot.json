@@ -8,7 +8,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-api.hypomos-dev.svc.cluster.local",
+          "Host": "hypomos-api",
           "Port": 80
         }
       ],
@@ -26,7 +26,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-identityserver.hypomos-dev.svc.cluster.local",
+          "Host": "hypomos-identityserver",
           "Port": 80
         }
       ],
@@ -44,7 +44,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-frontend.hypomos-dev.svc.cluster.local",
+          "Host": "hypomos-frontend",
           "Port": 80
         }
       ],
@@ -62,7 +62,7 @@
       "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
         {
-          "Host": "hypomos-frontend.hypomos-dev.svc.cluster.local",
+          "Host": "hypomos-frontend",
           "Port": 80
         }
       ]
