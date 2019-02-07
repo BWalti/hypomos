@@ -4,6 +4,7 @@ EXPOSE 5003
 
 FROM bibolorean/dotnet-nodejs AS build
 WORKDIR /src
+COPY ./NuGet.config ./NuGet.config
 COPY ./src/Gateway/Gateway.csproj ./src/Gateway/Gateway.csproj
 WORKDIR /src/src/Gateway/
 RUN dotnet restore
