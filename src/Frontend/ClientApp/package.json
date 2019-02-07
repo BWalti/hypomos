@@ -37,7 +37,6 @@
     "ajv": "^6.8.1",
     "cross-env": "^5.2.0",
     "file-loader": "^3.0.1",
-    "jest": "^24.1.0",
     "request": "^2.88.0",
     "typescript": "^3.3.3"
   },
