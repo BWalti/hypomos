@@ -1,7 +1,7 @@
 {
   "ReRoutes": [
     {
-      "Priority": 10,
+      "Priority": 9,
       "UpstreamPathTemplate": "/api/{everything}",
       "UpstreamHttpMethod": ["Get", "Post", "Delete", "Put"],
       "DownstreamPathTemplate": "/api/{everything}",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "Priority": 10,
+      "Priority": 8,
       "UpstreamPathTemplate": "/auth/{everything}",
       "UpstreamHttpMethod": ["Get","Post"],
       "DownstreamPathTemplate": "/{everything}",
@@ -35,6 +35,19 @@
         "X-Forwarded-Host":  "hypomos-dev.bwalti.net",
         "X-Forwarded-For": "{RemoteIpAddress}"
       }
+    },
+    {
+      "Priority": 7, 
+      "DownstreamPathTemplate": "/{catchAll}",
+      "UpstreamPathTemplate": "/{catchAll}",
+      "UpstreamHttpMethod": ["Get", "Options"],
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "hypomos-frontend",
+          "Port": 80
+        }
+      ]
     },
     {
       "Priority": 1, 
@@ -53,19 +66,6 @@
         "X-Forwarded-Host":  "hypomos-dev.bwalti.net",
         "X-Forwarded-For": "{RemoteIpAddress}"
       }
-    },
-    {
-      "Priority": 5, 
-      "DownstreamPathTemplate": "/{catchAll}",
-      "UpstreamPathTemplate": "/{catchAll}",
-      "UpstreamHttpMethod": ["Get", "Options"],
-      "DownstreamScheme": "ws",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "hypomos-frontend",
-          "Port": 80
-        }
-      ]
     }
   ],
   "GlobalConfiguration": {
